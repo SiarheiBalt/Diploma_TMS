@@ -7,10 +7,12 @@ export const CostOut = ({ cost }) => {
   return (
     <Background>
       <div>
-        <div>
-          Примерная стоимость состовляет <span>{cost}</span> BYN
+        <div style={{ paddingTop: "20px" }}>
+          <h3 style={{ width: "450px", margin: " auto" }}>
+            Примерная стоимость состовляет <span>{cost}</span> BYN
+          </h3>
         </div>
-        <div>
+        <div style={{ width: "55px", margin: "20px auto" }}>
           <button
             onClick={() => dispatch({ type: ACTIONS.CHANGE_WAS_PAYMENT })}
           >
@@ -22,4 +24,8 @@ export const CostOut = ({ cost }) => {
   );
 };
 
-const Background = styled.div``;
+const Background = styled.div`
+  background-color: cornflowerblue;
+  border-radius: 5px 5px 0 0;
+  height: 100px;
+`;

@@ -5,6 +5,8 @@ import title from "./img/photo/title.jpg";
 import { Cost } from "./components/cost/Cost";
 import { Main } from "./components/main/Main";
 import { BrowserRouter, NavLink, Redirect, Route } from "react-router-dom";
+import { Posters } from "./components/posters/Posters";
+import { Admin } from "./components/admin/Admin";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <BackGround background={title}>
             <Route path="/main" component={Main} />
             <Route path="/cost" component={Cost} />
+            <Route path="/posters" component={Posters} />
+            <Route path="/admin" component={Admin} />
           </BackGround>
           <div>Ближайшие выступления</div>
         </Container>

@@ -1,17 +1,27 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import createSagaMiddleware from "redux-saga";
+import { authReducer } from "./reducers/authReducer";
 import { costReducer } from "./reducers/costReducer";
-import { costSaga } from "./reducers/sagas";
+import { posterReducer } from "./reducers/posterReducer";
+import {
+  costSaga,
+  postersSaga,
+  pushPosterSaga,
+  removePosterSaga,
+} from "./reducers/sagas";
 
 const sagaMiddleWare = createSagaMiddleware();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export const store = createStore(
-  costReducer,
+  combineReducers({ costReducer, posterReducer, authReducer }),
   composeEnhancers(applyMiddleware(sagaMiddleWare))
 );
 
 window.store = store;
 
 sagaMiddleWare.run(costSaga);
+sagaMiddleWare.run(postersSaga);
+sagaMiddleWare.run(pushPosterSaga);
+sagaMiddleWare.run(removePosterSaga);

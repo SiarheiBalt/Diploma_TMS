@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 registerLocale("ru", ru);
 
 export const Cost = () => {
-  const cost = useSelector((state) => state.dataForPayment);
+  const cost = useSelector((state) => state.costReducer.dataForPayment);
   return (
     <CostDiv>
       <Mask>

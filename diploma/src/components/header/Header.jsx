@@ -6,7 +6,7 @@ export const Header = () => {
     <Flex>
       <NavLink to="/main">Главная</NavLink>
       <NavLink to="/cost">Стоимость</NavLink>
-      <div>Афиша</div>
+      <NavLink to="/posters">Афиша</NavLink>
       <div>Репертуар</div>
       <div>Отзывы</div>
       <div>Media</div>

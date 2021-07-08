@@ -1,7 +1,4 @@
 import { ACTIONS } from "./constans";
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/database";
 import { InitializeFirebase } from "../../firebase";
 
 InitializeFirebase();
@@ -23,7 +20,7 @@ const defaultState = {
   },
 };
 
-export const costReducer = (state, action) => {
+export const costReducer = (state = defaultState, action) => {
   switch (action.type) {
     case ACTIONS.GET_DATA_USERS_COST:
       let userDataForPaymentCost = {
@@ -51,6 +48,6 @@ export const costReducer = (state, action) => {
       return { ...state, dataForPayment };
     }
     default:
-      return defaultState;
+      return state;
   }
 };

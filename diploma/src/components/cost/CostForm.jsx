@@ -38,7 +38,7 @@ export const CostForm = () => {
   return (
     <Form>
       <div>
-        <div>Выберите дату</div>
+        <h4>Выберите дату</h4>
         <DatePicker
           locale="ru"
           selected={startDate}
@@ -48,7 +48,7 @@ export const CostForm = () => {
         />
       </div>
       <div>
-        <div>Примерное расстояние от Минска, км</div>
+        <h4>Примерное расстояние от Минска, км</h4>
         <input
           type="text"
           placeholder={`0`}
@@ -58,12 +58,14 @@ export const CostForm = () => {
       </div>
       <div>
         <div>
-          <input
-            type="checkbox"
-            checked={hasEquip}
-            onChange={onClickCheckbox}
-          />
-          Имеется ли звуковая аппаратура на площадке?
+          <h5>
+            <input
+              type="checkbox"
+              checked={hasEquip}
+              onChange={onClickCheckbox}
+            />
+            Имеется ли звуковая аппаратура на площадке?
+          </h5>
         </div>
       </div>
       <div>
