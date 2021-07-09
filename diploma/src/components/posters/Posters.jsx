@@ -9,6 +9,7 @@ import { Poster } from "./Poster";
 
 export const Posters = () => {
   const state = useSelector((state) => state.posterReducer);
+  const acces = useSelector((state) => state.authReducer.admin.accesForEdit);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,14 +34,14 @@ export const Posters = () => {
                   removePoster={removePoster}
                   key={i}
                   poster={poster.poster}
-                  acces={state.accesForEdit}
+                  acces={acces}
                   id={poster.id}
                 />
               ))}
             </ul>
           )}
 
-          {state.accesForEdit && <AddFormPoster />}
+          {acces && <AddFormPoster />}
         </div>
       </Mask>
     </div>

@@ -2,9 +2,12 @@ import { takeEvery, call, put } from "redux-saga/effects";
 import { ACTIONS } from "./constans";
 import {
   addPosterDatabase,
+  checkOutOf,
   getCostDatabase,
+  initializeAuthAdmin,
   readPostersDatabase,
   removePosterItemDatabase,
+  signOutAdmin,
 } from "../fireBaseFunctions";
 
 function* getCostSaga(action) {
@@ -46,4 +49,33 @@ function* removePoster(action) {
 }
 export function* removePosterSaga() {
   yield takeEvery(ACTIONS.REMOVE_POSTER, removePoster);
+}
+
+function* checkAdminLogin(action) {
+  try {
+    const responseAuthUid = yield call(() =>
+      initializeAuthAdmin(action.login, action.password)
+    );
+    yield put({
+      type: ACTIONS.CHECK_LOGIN_PASSWORD_ADMIN_CUCCES,
+      responseAuthUid,
+    });
+  } catch (er) {}
+}
+export function* checkAdminLoginSaga() {
+  yield takeEvery(ACTIONS.CHECK_LOGIN_PASSWORD_ADMIN, checkAdminLogin);
+}
+
+function* getOutAdmin() {
+  try {
+    yield call(() => signOutAdmin());
+    yield put({ type: ACTIONS.SIGN_OUT_ADMIN_SUCCES });
+    yield call(() => checkOutOf());
+  } catch (er) {
+    console.log(er);
+  }
+}
+
+export function* getOutAdminSaga() {
+  yield takeEvery(ACTIONS.SIGN_OUT_ADMIN, getOutAdmin);
 }

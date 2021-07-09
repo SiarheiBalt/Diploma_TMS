@@ -4,7 +4,9 @@ import { authReducer } from "./reducers/authReducer";
 import { costReducer } from "./reducers/costReducer";
 import { posterReducer } from "./reducers/posterReducer";
 import {
+  checkAdminLoginSaga,
   costSaga,
+  getOutAdminSaga,
   postersSaga,
   pushPosterSaga,
   removePosterSaga,
@@ -25,3 +27,5 @@ sagaMiddleWare.run(costSaga);
 sagaMiddleWare.run(postersSaga);
 sagaMiddleWare.run(pushPosterSaga);
 sagaMiddleWare.run(removePosterSaga);
+sagaMiddleWare.run(checkAdminLoginSaga);
+sagaMiddleWare.run(getOutAdminSaga);

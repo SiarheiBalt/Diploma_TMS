@@ -1,7 +1,4 @@
 import { ACTIONS } from "./constans";
-import { InitializeFirebase } from "../../firebase";
-
-InitializeFirebase();
 
 const defaultState = {
   userDataForPaymentCost: {

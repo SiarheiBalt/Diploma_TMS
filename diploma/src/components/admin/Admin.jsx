@@ -7,8 +7,8 @@ import { ACTIONS } from "../../redux/reducers/constans";
 export const Admin = () => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
-  const acces = useSelector((state) => console.log(state));
-  console.log(acces);
+  const acces = useSelector((state) => state.authReducer.admin);
+  console.log("admin");
   const dispatch = useDispatch();
 
   const onChangeLogin = (e) => {
@@ -24,34 +24,51 @@ export const Admin = () => {
     setLogin("");
   };
 
+  const getOutAdmin = () => {
+    dispatch({ type: ACTIONS.SIGN_OUT_ADMIN });
+  };
+
   return (
     <div>
       <Mask>
         <div>
-          <h3>
-            Войти на сайт как администратор, с возможностью редактирования.
-          </h3>
-          <div>
+          {acces.accesForEdit ? (
             <div>
-              <input
-                value={login}
-                type={"text"}
-                placeholder={"login"}
-                onChange={onChangeLogin}
-              />
+              <h4>Вы вошли как редактор сайта</h4>
+              <div>
+                <button onClick={getOutAdmin}>Выйти</button>
+              </div>
             </div>
+          ) : (
             <div>
-              <input
-                value={password}
-                type={"password"}
-                placeholder={"password"}
-                onChange={onchangePassword}
-              />
+              <h3>
+                Войти на сайт как администратор, с возможностью редактирования.
+              </h3>
+              <div>
+                <div>
+                  <div>
+                    <input
+                      value={login}
+                      type={"text"}
+                      placeholder={"login"}
+                      onChange={onChangeLogin}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      value={password}
+                      type={"password"}
+                      placeholder={"password"}
+                      onChange={onchangePassword}
+                    />
+                  </div>
+                  <div>
+                    <button onClick={getLoginPassword}>Войти</button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <button onClick={getLoginPassword}>Войти</button>
-            </div>
-          </div>
+          )}
         </div>
       </Mask>
     </div>
