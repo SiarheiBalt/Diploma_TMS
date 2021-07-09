@@ -59,7 +59,6 @@ export async function initializeAuthAdmin(login, password) {
 
 export async function signOutAdmin() {
   try {
-    console.log("signOut");
     await firebase.auth().signOut();
   } catch (err) {
     return err;

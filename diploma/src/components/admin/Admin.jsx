@@ -8,7 +8,7 @@ export const Admin = () => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const acces = useSelector((state) => state.authReducer.admin);
-  console.log("admin");
+
   const dispatch = useDispatch();
 
   const onChangeLogin = (e) => {
