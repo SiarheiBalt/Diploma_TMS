@@ -7,6 +7,7 @@ import { ACTIONS } from "../../redux/reducers/constans";
 import { AddFormPoster } from "./AddPosterForm";
 import { Poster } from "./Poster";
 import title from "./../../img/background/title.jpg";
+import { Footer } from "../main/Foter";
 
 export const Posters = () => {
   const state = useSelector((state) => state.posterReducer);
@@ -22,39 +23,42 @@ export const Posters = () => {
   };
 
   return (
-    <BackGround background={title}>
-      <Mask>
-        <Wrapper>
-          <img
-            src="/pictures/images/posters1.jpg"
-            style={{ borderRadius: "3px" }}
-            alt=""
-          />
-          <div>
-            <h3>Афишка</h3>
-          </div>
-          <div>
-            {state.posters === null ? (
-              <div>PRELOADER</div>
-            ) : (
-              <ul>
-                {state.posters.map((poster, i) => (
-                  <Poster
-                    removePoster={removePoster}
-                    key={i}
-                    poster={poster.el}
-                    acces={acces}
-                    id={poster.id}
-                  />
-                ))}
-              </ul>
-            )}
+    <div>
+      <BackGround background={title}>
+        <Mask>
+          <Wrapper>
+            <img
+              src="/pictures/images/posters1.jpg"
+              style={{ borderRadius: "3px" }}
+              alt=""
+            />
+            <div>
+              <h3>Афишка</h3>
+            </div>
+            <div>
+              {state.posters === null ? (
+                <div>PRELOADER</div>
+              ) : (
+                <ul>
+                  {state.posters.map((poster, i) => (
+                    <Poster
+                      removePoster={removePoster}
+                      key={i}
+                      poster={poster.el}
+                      acces={acces}
+                      id={poster.id}
+                    />
+                  ))}
+                </ul>
+              )}
 
-            {acces && <AddFormPoster />}
-          </div>
-        </Wrapper>
-      </Mask>
-    </BackGround>
+              {acces && <AddFormPoster />}
+            </div>
+          </Wrapper>
+        </Mask>
+      </BackGround>
+      <Footer />
+    </div>
   );
 };
 

@@ -38,7 +38,7 @@ export const CostForm = () => {
   return (
     <Form>
       <div>
-        <h4>Выберите дату</h4>
+        <h4 style={{ textAlign: `center` }}>Выберите дату</h4>
         <DatePicker
           locale="ru"
           selected={startDate}
@@ -49,23 +49,24 @@ export const CostForm = () => {
       </div>
       <div>
         <h4>Примерное расстояние от Минска, км</h4>
-        <input
-          type="text"
-          placeholder={`0`}
-          onChange={onChangeInput}
-          value={distance}
-        />
+        <div style={{ textAlign: `center` }}>
+          <input
+            type="text"
+            placeholder={`0`}
+            onChange={onChangeInput}
+            value={distance}
+          />
+        </div>
       </div>
       <div>
-        <div>
-          <h5>
-            <input
-              type="checkbox"
-              checked={hasEquip}
-              onChange={onClickCheckbox}
-            />
-            Имеется ли звуковая аппаратура на площадке?
-          </h5>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={hasEquip}
+            onChange={onClickCheckbox}
+            style={{ width: "30px" }}
+          />
+          <h5>Имеется ли звуковая аппаратура на площадке?</h5>
         </div>
       </div>
       <div>
@@ -77,6 +78,11 @@ export const CostForm = () => {
 
 const Form = styled.div`
   background-color: cornflowerblue;
-  border-radius: 5px;
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  padding: 20px 0;
+  border-radius: 3px;
 `;

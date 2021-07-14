@@ -26,7 +26,7 @@ export const Reviews = () => {
       <Mask>
         <img
           src="/pictures/images/Reviewes.jpg"
-          style={{ width: "inherit" }}
+          style={{ maxWidth: "1000px" }}
           alt=""
         />
         <div>
@@ -44,9 +44,8 @@ export const Reviews = () => {
               ))}
             </div>
           )}
-          <div>
-            <MailForAuth dispatch={dispatch} />
-          </div>
+          <hr />
+          <MailForAuth dispatch={dispatch} />
         </div>
       </Mask>
     </div>

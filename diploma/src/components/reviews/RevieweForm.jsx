@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
+import styled from "styled-components";
 import { getDate } from "../../common/functions";
 import { Mask } from "../../common/style";
 import { ACTIONS } from "../../redux/reducers/constans";
@@ -44,8 +45,8 @@ export const RevieweForm = () => {
         </div>
       ) : (
         // {/* </Mask> */}
-        <div>
-          <Mask>
+        <Mask>
+          <Wrapper>
             <h5>Напишите свой отзыв и нажмите кнопку добавить!</h5>
             <input
               type="text"
@@ -63,14 +64,31 @@ export const RevieweForm = () => {
               rows="10"
             ></textarea>
             <button onClick={send}>Добавить</button>
-          </Mask>
-        </div>
+          </Wrapper>
+        </Mask>
       )}
     </div>
   ) : (
-    <div>
-      <h2 style={{ color: "white" }}>Ваш отзыв добавлен.</h2>
-      <h2 style={{ color: "white" }}>Спасибо за рецезию!</h2>
-    </div>
+    <Flex>
+      <h3>Ваш отзыв добавлен.</h3>
+      <h3>Спасибо за рецезию!</h3>
+    </Flex>
   );
 };
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 350px;
+  padding: 20px;
+`;
+
+const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: cornflowerblue;
+`;

@@ -19,6 +19,12 @@ export const CostOut = ({ cost }) => {
             Назад
           </button>
         </div>
+        <div style={{ padding: "25px" }}>
+          <h4>
+            Цена явлется примерной. Звоните и я Вас проконсультирую по вопросу
+            ценообразования +375-44-779-48-15.{" "}
+          </h4>
+        </div>
       </div>
     </Background>
   );
@@ -26,6 +32,9 @@ export const CostOut = ({ cost }) => {
 
 const Background = styled.div`
   background-color: cornflowerblue;
-  border-radius: 5px 5px 0 0;
-  height: 100px;
+  margin-top: 55px;
+  & h4 {
+    max-width: 750px;
+    margin: auto;
+  }
 `;

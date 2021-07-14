@@ -9,7 +9,6 @@ import { AddSongForm } from "./AddSongForm";
 export const SongList = () => {
   const list = useSelector((state) => state.songsReducer);
   const acces = useSelector((state) => state.authReducer.admin.accesForEdit);
-  // const [text, setText] = useState("");
 
   const dispatch = useDispatch();
 
@@ -26,7 +25,7 @@ export const SongList = () => {
   };
 
   return (
-    <Mask>
+    <Mask style={{ backgroundColor: "rgb(157 190 248)" }}>
       {acces && <AddSongForm dispatch={dispatch} />}
       {list.eng === null ? (
         <div>Preloader</div>
