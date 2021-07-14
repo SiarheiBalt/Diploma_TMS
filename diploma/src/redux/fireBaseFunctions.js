@@ -19,26 +19,29 @@ export const InitializeFirebase = () => {
   firebase.initializeApp(firebaseConfig);
 };
 
-export async function getCostDatabase() {
-  const db = await firebase.database().ref("groupCost").once("value");
+export async function getDatabase(base) {
+  const db = await firebase.database().ref(`${base}`).once("value");
   const paymentCostDb = await db.val();
   return paymentCostDb;
 }
 
-export async function removePosterItemDatabase(id) {
-  const db = await firebase.database().ref(`posters/${id}`);
+export async function removeItemDatabase(id, base) {
+  const db = await firebase.database().ref(`${base}/${id}`);
   await db.remove();
-  // await newPoster.set(arr); ----Set all array in database---
-  // await db.child('');
 }
 
-export async function addPosterDatabase(item) {
-  const db = await firebase.database().ref("posters");
+export async function setArrayInDatabase(arr, base) {
+  const db = await firebase.database().ref(`${base}`);
+  await db.set(arr);
+}
+
+export async function addElDatabase(item, base) {
+  const db = await firebase.database().ref(`${base}`);
   const newPoster = await db.push(item);
 }
 
-export async function readPostersDatabase() {
-  const db = await await firebase.database().ref("posters").once("value");
+export async function readDatabase(base) {
+  const db = await await firebase.database().ref(`${base}`).once("value");
   const responseDb = await db.val();
   return responseDb;
 }
@@ -53,7 +56,7 @@ export async function initializeAuthAdmin(login, password) {
       .onAuthStateChanged((user) => user && (authResponse = user.uid));
     return authResponse;
   } catch (error) {
-    return error;
+    console.log(error);
   }
 }
 
@@ -61,11 +64,59 @@ export async function signOutAdmin() {
   try {
     await firebase.auth().signOut();
   } catch (err) {
-    return err;
+    console.log(err);
   }
 }
 
 export async function checkOutOf() {
   const userCurrent = await firebase.auth().currentUser;
-  userCurrent ? console.log(userCurrent) : console.log("No user is signed in.");
+  userCurrent ? console.log(userCurrent) : console.log("user out");
+  return userCurrent ? userCurrent : "user out";
+}
+window.checkOutOf = checkOutOf;
+
+export async function sendSignInLinkToEmail(email) {
+  try {
+    let actionCodeSettings = {
+      url: `http://localhost:3000/put-reviews/finishSignUp?cartId=1234`,
+
+      handleCodeInApp: true,
+    };
+    window.localStorage.setItem("emailForSignIn", email);
+    await firebase.auth().sendSignInLinkToEmail(email, actionCodeSettings);
+  } catch (er) {
+    console.log(er);
+  }
+}
+export async function singInAfterGetMail() {
+  try {
+    let storageEmail = window.localStorage.getItem("emailForSignIn");
+    await firebase
+      .auth()
+      .signInWithEmailLink(storageEmail, window.location.href);
+    window.localStorage.removeItem("emailForSignIn");
+    checkOutOf();
+  } catch (er) {
+    console.log(er);
+  }
+}
+
+export async function createUser(email, password) {
+  try {
+    await firebase.auth().createUserWithEmailAndPassword(email, password);
+    signOutAdmin();
+  } catch (er) {
+    console.log(er);
+    // ..
+  }
+}
+
+export async function delleteUser() {
+  try {
+    const user = await firebase.auth().currentUser;
+    await user.delete();
+    await checkOutOf();
+  } catch (er) {
+    console.log(er);
+  }
 }

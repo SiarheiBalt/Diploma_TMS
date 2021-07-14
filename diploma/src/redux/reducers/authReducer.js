@@ -1,4 +1,4 @@
-import { initializeAuth, InitializeFirebase } from "../fireBaseFunctions";
+import { InitializeFirebase } from "../fireBaseFunctions";
 import { ACTIONS } from "./constans";
 
 InitializeFirebase();
@@ -6,7 +6,7 @@ InitializeFirebase();
 const defaultState = {
   admin: {
     accesForEdit: false,
-    responseAuthUid: "iheduRqru1UHz79iVp9qPpi2RP32",
+    responseAuthUid: "44sgJBnIiNgUQRwtvhPU8XfWZcu1",
     error: null,
   },
 };

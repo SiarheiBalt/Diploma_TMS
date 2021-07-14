@@ -7,10 +7,10 @@ export const Header = () => {
       <NavLink to="/main">Главная</NavLink>
       <NavLink to="/cost">Стоимость</NavLink>
       <NavLink to="/posters">Афиша</NavLink>
-      <div>Репертуар</div>
-      <div>Отзывы</div>
-      <div>Media</div>
-      <div>Контакты</div>
+      <NavLink to="/songs">Репертуар</NavLink>
+      <NavLink to="/reviews">Отзывы</NavLink>
+      <NavLink to="/media">Media</NavLink>
+
       <div>Статьи</div>
     </Flex>
   );

@@ -6,6 +6,7 @@ import { Mask } from "../../common/style";
 import { ACTIONS } from "../../redux/reducers/constans";
 import { AddFormPoster } from "./AddPosterForm";
 import { Poster } from "./Poster";
+import title from "./../../img/background/title.jpg";
 
 export const Posters = () => {
   const state = useSelector((state) => state.posterReducer);
@@ -21,29 +22,50 @@ export const Posters = () => {
   };
 
   return (
-    <div>
+    <BackGround background={title}>
       <Mask>
-        <h3>Афишка</h3>
-        <div>
-          {state.posters === null ? (
-            <div>PRELOADER</div>
-          ) : (
-            <ul>
-              {state.posters.map((poster, i) => (
-                <Poster
-                  removePoster={removePoster}
-                  key={i}
-                  poster={poster.poster}
-                  acces={acces}
-                  id={poster.id}
-                />
-              ))}
-            </ul>
-          )}
+        <Wrapper>
+          <img
+            src="/pictures/images/posters1.jpg"
+            style={{ borderRadius: "3px" }}
+            alt=""
+          />
+          <div>
+            <h3>Афишка</h3>
+          </div>
+          <div>
+            {state.posters === null ? (
+              <div>PRELOADER</div>
+            ) : (
+              <ul>
+                {state.posters.map((poster, i) => (
+                  <Poster
+                    removePoster={removePoster}
+                    key={i}
+                    poster={poster.el}
+                    acces={acces}
+                    id={poster.id}
+                  />
+                ))}
+              </ul>
+            )}
 
-          {acces && <AddFormPoster />}
-        </div>
+            {acces && <AddFormPoster />}
+          </div>
+        </Wrapper>
       </Mask>
-    </div>
+    </BackGround>
   );
 };
+
+const BackGround = styled.div`
+  background-image: url(${({ background }) => background});
+  background-size: cover;
+  padding: 20px 0;
+`;
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+`;

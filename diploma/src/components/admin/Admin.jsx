@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
@@ -18,6 +19,7 @@ export const Admin = () => {
     setPassword(e.target.value);
   };
 
+  console.log("admin");
   const getLoginPassword = () => {
     dispatch({ type: ACTIONS.CHECK_LOGIN_PASSWORD_ADMIN, login, password });
     setPassword("");

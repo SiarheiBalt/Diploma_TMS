@@ -1,12 +1,15 @@
 import "./App.css";
 import styled from "styled-components";
 import { Header } from "./components/header/Header";
-import title from "./img/photo/title.jpg";
 import { Cost } from "./components/cost/Cost";
 import { Main } from "./components/main/Main";
 import { BrowserRouter, NavLink, Redirect, Route } from "react-router-dom";
 import { Posters } from "./components/posters/Posters";
 import { Admin } from "./components/admin/Admin";
+import { SongList } from "./components/songList/SongList";
+import { Reviews } from "./components/reviews/Reviews";
+import { RevieweForm } from "./components/reviews/RevieweForm";
+import { Media } from "./components/media/Media";
 
 function App() {
   return (
@@ -14,13 +17,15 @@ function App() {
       <div className="App">
         <Container>
           <Header />
-          <BackGround background={title}>
-            <Route path="/main" component={Main} />
-            <Route path="/cost" component={Cost} />
-            <Route path="/posters" component={Posters} />
-            <Route path="/admin" component={Admin} />
-          </BackGround>
-          <div>Ближайшие выступления</div>
+
+          <Route path="/main" component={Main} />
+          <Route path="/cost" component={Cost} />
+          <Route path="/posters" component={Posters} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/songs" component={SongList} />
+          <Route path="/reviews" component={Reviews} />
+          <Route path="/put-reviews" component={RevieweForm} />
+          <Route path="/media" component={Media} />
         </Container>
       </div>
     </BrowserRouter>
@@ -30,15 +35,6 @@ function App() {
 export default App;
 
 const Container = styled.div`
-  width: 1100px;
+  max-width: 1100px;
   margin: auto;
-`;
-const BackGround = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 650px;
-  background-image: url(${({ background }) => background});
-  background-size: contain;
-  background-repeat: no-repeat;
 `;
