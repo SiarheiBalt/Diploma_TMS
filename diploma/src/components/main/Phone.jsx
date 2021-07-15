@@ -48,11 +48,11 @@ export const Phone = () => {
 const Wrapper = styled.div`
   background-color: whitesmoke;
   width: 270px;
-  border-radius: 3px;
   height: 40px;
   display: flex;
   align-items: center;
   font-weight: 700;
   font-size: 1.1em;
   color: #1d1d1d;
+  box-shadow: 0 0 15px rgb(0 0 0 / 50%);
 `;

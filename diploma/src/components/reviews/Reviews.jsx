@@ -4,6 +4,7 @@ import { Mask } from "../../common/style";
 import { ACTIONS } from "../../redux/reducers/constans";
 import { Reviewe } from "./Reviewe";
 import { MailForAuth } from "./MailForAuth";
+import { Preloader } from "../Preloader/Preloader";
 
 export const Reviews = () => {
   const reviewes = useSelector((state) => state.reviewsReducer.reviewes);
@@ -23,7 +24,7 @@ export const Reviews = () => {
         />
         <div>
           {reviewes === null ? (
-            <div>Preloader</div>
+            <Preloader picture="/pictures/preloaders/preloaderWhiteSmoke.png" />
           ) : (
             <div>
               {reviewes.map((reviewe, i) => (

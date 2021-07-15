@@ -8,6 +8,7 @@ import { AddFormPoster } from "./AddPosterForm";
 import { Poster } from "./Poster";
 import title from "./../../img/background/title.jpg";
 import { Footer } from "../Main/Footer";
+import { Preloader } from "../Preloader/Preloader";
 
 export const Posters = () => {
   const state = useSelector((state) => state.posterReducer);
@@ -37,7 +38,7 @@ export const Posters = () => {
             </div>
             <div>
               {state.posters === null ? (
-                <div>PRELOADER</div>
+                <Preloader />
               ) : (
                 <ul>
                   {state.posters.map((poster, i) => (

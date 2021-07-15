@@ -6,6 +6,7 @@ import { ACTIONS } from "../../redux/reducers/constans";
 import { useState } from "react";
 import { AddSongForm } from "./AddSongForm";
 import { Footer } from "../Main/Footer";
+import { Preloader } from "../Preloader/Preloader";
 
 export const SongList = () => {
   const list = useSelector((state) => state.songsReducer);
@@ -24,13 +25,13 @@ export const SongList = () => {
     };
     dispatch({ song, type: ACTIONS.REMOVE_SONG });
   };
-
+  console.log(list.eng);
   return (
     <div>
       <Mask>
         {acces && <AddSongForm dispatch={dispatch} />}
         {list.eng === null ? (
-          <div>Preloader</div>
+          <Preloader />
         ) : (
           <Wrapper>
             <div>

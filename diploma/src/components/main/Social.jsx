@@ -32,10 +32,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
   background-color: whitesmoke;
-  border-radius: 3px;
   height: 34px;
   width: 200px;
   font-weight: 650;
+  box-shadow: 0 0 15px rgb(0 0 0 / 50%);
   .insta {
     width: 28px;
     height: 25px;

@@ -10,7 +10,7 @@ import { Social } from "./Social";
 
 export const Main = () => {
   return (
-    <div>
+    <Mask>
       <BackGround background={title}>
         <div
           style={{
@@ -32,8 +32,9 @@ export const Main = () => {
         </div>
         <Description />
       </BackGround>
+      {/* <div style={{ height: "100px" }}></div> */}
       <Footer />
-    </div>
+    </Mask>
   );
 };
 

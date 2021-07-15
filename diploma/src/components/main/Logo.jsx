@@ -16,6 +16,6 @@ export const Logo = () => {
 const Wrapper = styled.div`
   background-color: black;
   max-width: 220px;
-  border-radius: 3px;
+  box-shadow: 0 0 15px rgb(0 0 0 / 50%);
   padding: 5px;
 `;

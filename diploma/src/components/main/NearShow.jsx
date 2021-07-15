@@ -25,6 +25,6 @@ export const NearShow = () => {
 const Wrapper = styled.div`
   background-color: whitesmoke;
   max-width: 500px;
-  border-radius: 3px;
   padding: 2px 5px;
+  box-shadow: 0 0 15px rgb(0 0 0 / 50%);
 `;

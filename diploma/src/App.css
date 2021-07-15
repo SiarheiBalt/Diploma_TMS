@@ -19,6 +19,7 @@ button {
   /* width: 100px; */
   color: white;
   background-color: rgb(36, 36, 36);
+  cursor: pointer;
 }
 button:active {
   background-color: rgb(203, 229, 238);

@@ -132,7 +132,6 @@ export function* getReviewsSaga() {
 }
 
 function* sendMailAndCreateUser(action) {
-  yield console.log(action.email);
   yield call(() => createUser(action.email, "123456"));
   yield call(() => sendSignInLinkToEmail(action.email));
 }
