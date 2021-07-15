@@ -15,7 +15,7 @@ export const Social = () => {
 
   return (
     <Wrapper>
-      <div>Мы всоцсетях</div>
+      <div>Мы в соцсетях</div>
       <div>
         <a href={"https://vk.com/navigatorcoverband"} target={"_blank"}>
           {vk}

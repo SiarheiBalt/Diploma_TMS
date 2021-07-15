@@ -38,6 +38,7 @@ export const CostForm = () => {
   return (
     <Form>
       <div>
+        <h3 style={{ textAlign: `center` }}>Расчет стоимости</h3>
         <h4 style={{ textAlign: `center` }}>Выберите дату</h4>
         <DatePicker
           locale="ru"

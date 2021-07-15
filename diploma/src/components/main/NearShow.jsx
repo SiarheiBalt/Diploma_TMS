@@ -11,7 +11,6 @@ export const NearShow = () => {
     state === null && dispatch({ type: ACTIONS.GET_POSTERS_DB });
   }, []);
 
-  console.log(state === null);
   return (
     <Wrapper>
       <div style={{ fontWeight: "700" }}>Ближайшее выступление:</div>

@@ -6,7 +6,7 @@ import ru from "date-fns/locale/ru";
 import { CostOut } from "./CostOut";
 import { useSelector } from "react-redux";
 import title from "./../../img/background/title.jpg";
-import { Footer } from "../main/Foter";
+import { Footer } from "../Main/Footer";
 
 registerLocale("ru", ru);
 

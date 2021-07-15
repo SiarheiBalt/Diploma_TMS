@@ -70,7 +70,6 @@ export async function signOutAdmin() {
 
 export async function checkOutOf() {
   const userCurrent = await firebase.auth().currentUser;
-  userCurrent ? console.log(userCurrent) : console.log("user out");
   return userCurrent ? userCurrent : "user out";
 }
 window.checkOutOf = checkOutOf;

@@ -36,15 +36,19 @@ export const RevieweForm = () => {
   return !redirect ? (
     <div>
       {!state.acces ? (
-        // <Mask>
         <div>
-          <h3 style={{ color: "white" }}>
+          <h3
+            style={{
+              color: "black",
+              backgroundColor: "#ff998d",
+              height: "70px",
+            }}
+          >
             Вы не авторизованы. Пройдите по вкладке отзывы и введите email чтоб
             оставить отзыв.
           </h3>
         </div>
       ) : (
-        // {/* </Mask> */}
         <Mask>
           <Wrapper>
             <h5>Напишите свой отзыв и нажмите кнопку добавить!</h5>

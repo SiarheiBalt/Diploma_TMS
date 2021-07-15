@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Mask } from "../../common/style";
 import title from "./../../img/background/title.jpg";
 import { Description } from "./Description";
-import { Footer } from "./Foter";
+import { Footer } from "./Footer";
 import { Logo } from "./Logo";
 import { NearShow } from "./NearShow";
 import { Phone } from "./Phone";

@@ -1,14 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Mask } from "../../common/style";
-import {
-  singInAfterGetMail,
-  checkOutOf,
-  sendSignInLinkToEmail,
-  createUser,
-  delleteUser,
-  setArrayInDatabase,
-} from "../../redux/fireBaseFunctions";
 import { ACTIONS } from "../../redux/reducers/constans";
 import { Reviewe } from "./Reviewe";
 import { MailForAuth } from "./MailForAuth";

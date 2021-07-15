@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { ACTIONS } from "../../redux/reducers/constans";
-import { Footer } from "../main/Foter";
+import { Footer } from "../Main/Footer";
 
 export const MailForAuth = ({ dispatch }) => {
   const [input, setInput] = useState("");

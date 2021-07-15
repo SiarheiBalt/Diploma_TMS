@@ -141,9 +141,7 @@ export function* sendMailAndCreateUserSaga() {
 }
 
 function* sendReviewe(action) {
-  yield console.log(action);
   let obj = yield { name: action.name, text: action.text, time: action.date };
-  console.log(obj);
   yield call(() => addElDatabase(obj, "reviewes"));
   yield call(() => delleteUser());
   yield put({ type: ACTIONS.REVIEWE_NOTALLOWED_ACCES });

@@ -7,7 +7,7 @@ import { ACTIONS } from "../../redux/reducers/constans";
 import { AddFormPoster } from "./AddPosterForm";
 import { Poster } from "./Poster";
 import title from "./../../img/background/title.jpg";
-import { Footer } from "../main/Foter";
+import { Footer } from "../Main/Footer";
 
 export const Posters = () => {
   const state = useSelector((state) => state.posterReducer);

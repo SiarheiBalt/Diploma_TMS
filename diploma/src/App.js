@@ -1,15 +1,16 @@
 import "./App.css";
 import styled from "styled-components";
-import { Header } from "./components/header/Header";
-import { Cost } from "./components/cost/Cost";
-import { Main } from "./components/main/Main";
+import { Header } from "./components/Header/Header";
+import { Cost } from "./components/Cost/Cost";
+import { Main } from "./components/Main/Main";
 import { BrowserRouter, NavLink, Redirect, Route } from "react-router-dom";
-import { Posters } from "./components/posters/Posters";
-import { Admin } from "./components/admin/Admin";
-import { SongList } from "./components/songList/SongList";
-import { Reviews } from "./components/reviews/Reviews";
-import { RevieweForm } from "./components/reviews/RevieweForm";
-import { Media } from "./components/media/Media";
+import { Posters } from "./components/Posters/Posters";
+import { Admin } from "./components/Admin/Admin";
+import { SongList } from "./components/SongList/SongList";
+import { Reviews } from "./components/Reviews/Reviews";
+import { RevieweForm } from "./components/Reviews/RevieweForm";
+import { Media } from "./components/Media/Media";
+import { Articles } from "./components/Articles/Articles";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       <div className="App">
         <Container>
           <Header />
-
+          <Route exact path="/">
+            <Redirect to="/main" />
+          </Route>
           <Route path="/main" component={Main} />
           <Route path="/cost" component={Cost} />
           <Route path="/posters" component={Posters} />
@@ -26,6 +29,7 @@ function App() {
           <Route path="/reviews" component={Reviews} />
           <Route path="/put-reviews" component={RevieweForm} />
           <Route path="/media" component={Media} />
+          <Route path="/articles" component={Articles} />
         </Container>
       </div>
     </BrowserRouter>

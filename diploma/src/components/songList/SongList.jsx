@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { ACTIONS } from "../../redux/reducers/constans";
 import { useState } from "react";
 import { AddSongForm } from "./AddSongForm";
+import { Footer } from "../Main/Footer";
 
 export const SongList = () => {
   const list = useSelector((state) => state.songsReducer);
@@ -25,52 +26,56 @@ export const SongList = () => {
   };
 
   return (
-    <Mask style={{ backgroundColor: "rgb(157 190 248)" }}>
-      {acces && <AddSongForm dispatch={dispatch} />}
-      {list.eng === null ? (
-        <div>Preloader</div>
-      ) : (
-        <Wrapper>
-          <div>
-            <h4>Eng</h4>
-            {list.eng.map((song, i) => (
-              <div key={i}>
-                {song.el}{" "}
-                {acces && (
-                  <button onClick={removeSong("eng", song.id)}>dell</button>
-                )}
-              </div>
-            ))}
-          </div>
-          <div>
-            <h4>Ru</h4>
-            {list.ru.map((song, i) => (
-              <div key={i}>
-                {song.el}{" "}
-                {acces && (
-                  <button onClick={removeSong("ru", song.id)}>dell</button>
-                )}
-              </div>
-            ))}
-          </div>
-          <div>
-            <h4>By/Uk</h4>
-            {list.byUk.map((song, i) => (
-              <div key={i}>
-                {song.el}{" "}
-                {acces && (
-                  <button onClick={removeSong("byUk", song.id)}>dell</button>
-                )}
-              </div>
-            ))}
-          </div>
-        </Wrapper>
-      )}
-    </Mask>
+    <div>
+      <Mask>
+        {acces && <AddSongForm dispatch={dispatch} />}
+        {list.eng === null ? (
+          <div>Preloader</div>
+        ) : (
+          <Wrapper>
+            <div>
+              <h4>Eng</h4>
+              {list.eng.map((song, i) => (
+                <div key={i}>
+                  {song.el}{" "}
+                  {acces && (
+                    <button onClick={removeSong("eng", song.id)}>dell</button>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div>
+              <h4>Ru</h4>
+              {list.ru.map((song, i) => (
+                <div key={i}>
+                  {song.el}{" "}
+                  {acces && (
+                    <button onClick={removeSong("ru", song.id)}>dell</button>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div>
+              <h4>By/Uk</h4>
+              {list.byUk.map((song, i) => (
+                <div key={i}>
+                  {song.el}{" "}
+                  {acces && (
+                    <button onClick={removeSong("byUk", song.id)}>dell</button>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Wrapper>
+        )}
+      </Mask>
+      <Footer />
+    </div>
   );
 };
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
+  margin-bottom: 25px;
 `;

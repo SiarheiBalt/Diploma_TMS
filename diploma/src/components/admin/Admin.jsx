@@ -19,7 +19,6 @@ export const Admin = () => {
     setPassword(e.target.value);
   };
 
-  console.log("admin");
   const getLoginPassword = () => {
     dispatch({ type: ACTIONS.CHECK_LOGIN_PASSWORD_ADMIN, login, password });
     setPassword("");
