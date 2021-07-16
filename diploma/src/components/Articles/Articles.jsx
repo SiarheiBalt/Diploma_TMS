@@ -14,7 +14,10 @@ export const Articles = () => {
             {state.map((el, i) => (
               <div key={i}>
                 <h4 style={{ textAlign: "center" }}>{el.title}</h4>
-                <div>{el.text}</div>
+                <div
+                  style={{ margin: "0 10px 0 10px" }}
+                  dangerouslySetInnerHTML={el.text()}
+                />
                 <img src={el.picture} style={el.pictureStyle} alt="" />
               </div>
             ))}
@@ -26,4 +29,8 @@ export const Articles = () => {
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  p {
+    text-indent: 20px;
+  }
+`;

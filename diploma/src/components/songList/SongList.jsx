@@ -25,7 +25,7 @@ export const SongList = () => {
     };
     dispatch({ song, type: ACTIONS.REMOVE_SONG });
   };
-  console.log(list.eng);
+
   return (
     <div>
       <Mask>

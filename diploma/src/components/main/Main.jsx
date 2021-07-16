@@ -28,11 +28,10 @@ export const Main = () => {
           }}
         >
           <Phone />
-          <NearShow />
         </div>
         <Description />
       </BackGround>
-      {/* <div style={{ height: "100px" }}></div> */}
+      <NearShow />
       <Footer />
     </Mask>
   );

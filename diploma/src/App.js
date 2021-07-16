@@ -16,8 +16,8 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
+        <Header />
         <Container>
-          <Header />
           <Route exact path="/">
             <Redirect to="/main" />
           </Route>
