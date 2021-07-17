@@ -18,7 +18,11 @@ export const Articles = () => {
                   style={{ margin: "0 10px 0 10px" }}
                   dangerouslySetInnerHTML={el.text()}
                 />
-                <img src={el.picture} style={el.pictureStyle} alt="" />
+                <img
+                  src={process.env.PUBLIC_URL + el.picture}
+                  style={el.pictureStyle}
+                  alt=""
+                />
               </div>
             ))}
           </div>
