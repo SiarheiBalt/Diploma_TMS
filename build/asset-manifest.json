@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Diploma_TMS/static/css/main.1f40a948.chunk.css",
+    "main.js": "/Diploma_TMS/static/js/main.e150e203.chunk.js",
+    "main.js.map": "/Diploma_TMS/static/js/main.e150e203.chunk.js.map",
+    "runtime-main.js": "/Diploma_TMS/static/js/runtime-main.a307609b.js",
+    "runtime-main.js.map": "/Diploma_TMS/static/js/runtime-main.a307609b.js.map",
+    "static/css/2.4bd8e119.chunk.css": "/Diploma_TMS/static/css/2.4bd8e119.chunk.css",
+    "static/js/2.a409e503.chunk.js": "/Diploma_TMS/static/js/2.a409e503.chunk.js",
+    "static/js/2.a409e503.chunk.js.map": "/Diploma_TMS/static/js/2.a409e503.chunk.js.map",
+    "static/js/3.5026c007.chunk.js": "/Diploma_TMS/static/js/3.5026c007.chunk.js",
+    "static/js/3.5026c007.chunk.js.map": "/Diploma_TMS/static/js/3.5026c007.chunk.js.map",
+    "index.html": "/Diploma_TMS/index.html",
+    "static/css/2.4bd8e119.chunk.css.map": "/Diploma_TMS/static/css/2.4bd8e119.chunk.css.map",
+    "static/css/main.1f40a948.chunk.css.map": "/Diploma_TMS/static/css/main.1f40a948.chunk.css.map",
+    "static/js/2.a409e503.chunk.js.LICENSE.txt": "/Diploma_TMS/static/js/2.a409e503.chunk.js.LICENSE.txt",
+    "static/media/preloaderWhiteSmoke.4175d344.png": "/Diploma_TMS/static/media/preloaderWhiteSmoke.4175d344.png",
+    "static/media/title.893a064b.jpg": "/Diploma_TMS/static/media/title.893a064b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a307609b.js",
+    "static/css/2.4bd8e119.chunk.css",
+    "static/js/2.a409e503.chunk.js",
+    "static/css/main.1f40a948.chunk.css",
+    "static/js/main.e150e203.chunk.js"
+  ]
+}
