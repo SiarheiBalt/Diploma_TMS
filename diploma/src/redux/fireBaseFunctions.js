@@ -56,7 +56,7 @@ export async function initializeAuthAdmin(login, password) {
       .onAuthStateChanged((user) => user && (authResponse = user.uid));
     return authResponse;
   } catch (error) {
-    console.log(error);
+    return error;
   }
 }
 

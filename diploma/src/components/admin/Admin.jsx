@@ -8,9 +8,13 @@ import { ACTIONS } from "../../redux/reducers/constans";
 export const Admin = () => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const [errorInput, setErrorInput] = useState(false);
   const acces = useSelector((state) => state.authReducer.admin);
-
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    acces.error !== null && setErrorInput(true);
+  }, [acces]);
 
   const onChangeLogin = (e) => {
     setLogin(e.target.value);
@@ -18,11 +22,18 @@ export const Admin = () => {
   const onchangePassword = (e) => {
     setPassword(e.target.value);
   };
+  const onKeyDown = (e) => {
+    e.key === "Backspace" && setErrorInput(false);
+  };
 
   const getLoginPassword = () => {
-    dispatch({ type: ACTIONS.CHECK_LOGIN_PASSWORD_ADMIN, login, password });
-    setPassword("");
-    setLogin("");
+    if (login === "admin@band.by") {
+      dispatch({ type: ACTIONS.CHECK_LOGIN_PASSWORD_ADMIN, login, password });
+      setPassword("");
+      setLogin("");
+    } else {
+      setErrorInput(true);
+    }
   };
 
   const getOutAdmin = () => {
@@ -48,7 +59,14 @@ export const Admin = () => {
               <div>
                 <div>
                   <div>
+                    {errorInput && (
+                      <div style={{ color: "red" }}>
+                        {" "}
+                        Неверный логин или пароль{" "}
+                      </div>
+                    )}
                     <input
+                      onKeyDown={onKeyDown}
                       value={login}
                       type={"text"}
                       placeholder={"login"}

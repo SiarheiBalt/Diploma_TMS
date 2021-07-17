@@ -13,7 +13,7 @@ export const Articles = () => {
           <div style={{ marginBottom: "20px" }}>
             {state.map((el, i) => (
               <div key={i}>
-                <h4 style={{ textAlign: "center" }}>{el.title}</h4>
+                <h4 style={{ textAlign: "center", margin: "0" }}>{el.title}</h4>
                 <div
                   style={{ margin: "0 10px 0 10px" }}
                   dangerouslySetInnerHTML={el.text()}
@@ -30,6 +30,7 @@ export const Articles = () => {
 };
 
 const Wrapper = styled.div`
+  padding-top: 30px;
   p {
     text-indent: 20px;
   }

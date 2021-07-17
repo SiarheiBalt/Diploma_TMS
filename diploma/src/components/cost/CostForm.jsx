@@ -7,6 +7,7 @@ import ru from "date-fns/locale/ru";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { ACTIONS } from "../../redux/reducers/constans";
+import { number } from "yup/lib/locale";
 
 registerLocale("ru", ru);
 
@@ -17,7 +18,7 @@ export const CostForm = () => {
   const dispatch = useDispatch();
 
   const onChangeInput = (e) => {
-    setDistance(e.target.value);
+    !isNaN(+e.target.value) && setDistance(e.target.value);
   };
   const onClickCheckbox = () => {
     setHasEquip(!hasEquip);

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   return (
-    <div style={{ backgroundColor: "black" }}>
+    <Head>
       <Container>
         <Flex>
           <div className="link">
@@ -43,7 +43,7 @@ export const Header = () => {
           </div>
         </Flex>
       </Container>
-    </div>
+    </Head>
   );
 };
 
@@ -71,4 +71,12 @@ const Container = styled.div`
   max-width: 1100px;
   margin: auto;
   opacity: 90%;
+`;
+
+const Head = styled.div`
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  background-color: black;
+  opacity: 84%;
 `;

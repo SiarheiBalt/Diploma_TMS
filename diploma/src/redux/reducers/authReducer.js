@@ -18,7 +18,14 @@ export const authReducer = (state = defaultState, action) => {
         let admin = {
           accesForEdit: true,
           responseAuthUid: state.admin.responseAuthUid,
-          error: state.admin.error,
+          error: null,
+        };
+        return { ...state, admin };
+      } else {
+        let admin = {
+          accesForEdit: false,
+          responseAuthUid: state.admin.responseAuthUid,
+          error: action.responseAuthUid.code,
         };
         return { ...state, admin };
       }

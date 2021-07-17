@@ -41,4 +41,5 @@ export default App;
 const Container = styled.div`
   max-width: 1100px;
   margin: auto;
+  background-color: whitesmoke;
 `;
