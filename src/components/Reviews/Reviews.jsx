@@ -19,7 +19,7 @@ export const Reviews = () => {
       <Mask>
         <img
           src={process.env.PUBLIC_URL + "/pictures/images/Reviewes.jpg"}
-          style={{ maxWidth: "1000px" }}
+          style={{ maxWidth: " -webkit-fill-available" }}
           alt=""
         />
         <div>

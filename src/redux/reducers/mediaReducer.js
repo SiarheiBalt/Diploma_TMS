@@ -1,11 +1,11 @@
 import { ACTIONS } from "./constans";
 
 const styleWideImg = {
-  width: "530px",
-  height: "320px",
+  maxWidth: "-webkit-fill-available",
+  maxhHeight: "-webkit-fill-available",
   objectFit: "cover",
   borderRadius: "3px",
-  margin: " 10px auto",
+  margin: " 7px 5px",
   cursor: "pointer",
 };
 

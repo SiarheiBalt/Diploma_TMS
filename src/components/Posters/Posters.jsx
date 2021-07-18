@@ -30,7 +30,7 @@ export const Posters = () => {
           <Wrapper>
             <img
               src={process.env.PUBLIC_URL + "/pictures/images/posters1.jpg"}
-              style={{ borderRadius: "3px" }}
+              className={"img"}
               alt=""
             />
             <div>
@@ -73,4 +73,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+  & .img {
+    max-width: -webkit-fill-available;
+    border-radius: 3px;
+  }
 `;

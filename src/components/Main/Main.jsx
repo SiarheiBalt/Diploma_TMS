@@ -12,12 +12,7 @@ export const Main = () => {
   return (
     <Mask>
       <BackGround background={title}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className={"logo_social"}>
           <Logo />
           <Social />
         </div>
@@ -46,4 +41,11 @@ const BackGround = styled.div`
   align-content: space-around;
   justify-content: space-around;
   height: 600px;
+  & .logo_social {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 550px) {
+      display: block;
+    }
+  }
 `;

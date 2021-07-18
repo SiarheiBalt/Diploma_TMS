@@ -4,11 +4,7 @@ export const Modal = ({ img, closeModal }) => {
   return (
     <Background onClick={closeModal}>
       <div>
-        <img
-          style={{ width: "950px", cursor: "pointer" }}
-          src={process.env.PUBLIC_URL + img}
-          alt=""
-        />
+        <img className={"img"} src={process.env.PUBLIC_URL + img} alt="" />
       </div>
     </Background>
   );
@@ -25,4 +21,17 @@ const Background = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  & .img {
+    cursor: pointer;
+    width: 950px;
+    @media (max-width: 1000px) {
+      width: 800px;
+    }
+    @media (max-width: 800px) {
+      width: 600px;
+    }
+    @media (max-width: 600px) {
+      width: 400px;
+    }
+  }
 `;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Mask } from "../../common/style";
 import { ACTIONS } from "../../redux/reducers/constans";
 import { Modal } from "./Modal";
+import { Footer } from "./../Main/Footer";
 
 export const Media = () => {
   const state = useSelector((state) => state.mediaReducer);
@@ -29,6 +30,7 @@ export const Media = () => {
           />
         ))}
       </Images>
+      <Footer />
     </Wrapper>
   );
 };

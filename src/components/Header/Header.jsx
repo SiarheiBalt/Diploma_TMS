@@ -79,4 +79,7 @@ const Head = styled.div`
   z-index: 1;
   background-color: black;
   opacity: 84%;
+  @media (max-width: 550px) {
+    font-size: 0.75em;
+  }
 `;

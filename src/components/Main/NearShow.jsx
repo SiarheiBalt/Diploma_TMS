@@ -49,6 +49,10 @@ const Wrapper = styled.div`
   justify-content: space-evenly;
   background-color: whitesmoke;
   padding: 2px 5px;
+  @media (max-width: 550px) {
+    font-size: 0.8em;
+    display: block;
+  }
 `;
 
 const Flex = styled.div`
