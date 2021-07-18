@@ -33,9 +33,11 @@ const Wrapper = styled.div`
   justify-content: space-around;
   background-color: whitesmoke;
   height: 34px;
-  width: 200px;
+  width: 210px;
   font-weight: 650;
-  box-shadow: 0 0 15px rgb(0 0 0 / 50%);
+  box-shadow: 0 10 25px rgb(0 0 0 / 70%);
+  border-radius: 20px;
+  border: solid 1px mediumspringgreen;
   .insta {
     width: 28px;
     height: 25px;

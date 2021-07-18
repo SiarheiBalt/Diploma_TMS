@@ -17,8 +17,10 @@ export const Description = () => {
 const Wrapper = styled.div`
   background-color: whitesmoke;
   width: 220px;
-  box-shadow: 0 0 15px rgb(0 0 0 / 50%);
+  box-shadow: 10 10 25px rgb(0 0 0 / 70%);
   padding: 5px;
   font-weight: 700;
   font-size: 0.9em;
+  border-radius: 20px;
+  border: solid 1px mediumspringgreen;
 `;

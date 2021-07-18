@@ -54,5 +54,7 @@ const Wrapper = styled.div`
   font-weight: 700;
   font-size: 1.1em;
   color: #1d1d1d;
-  box-shadow: 0 0 15px rgb(0 0 0 / 50%);
+  box-shadow: 0 0 25px rgb(0 0 0 / 60%);
+  border-radius: 20px;
+  border: solid 1px mediumspringgreen;
 `;
