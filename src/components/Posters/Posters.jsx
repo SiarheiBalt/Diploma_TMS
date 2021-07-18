@@ -36,7 +36,7 @@ export const Posters = () => {
             <div>
               <h3>Афишка</h3>
             </div>
-            <div>
+            <div style={{ marginRight: "20px" }}>
               {state.posters === null ? (
                 <Preloader />
               ) : (
@@ -75,6 +75,7 @@ const Wrapper = styled.div`
   padding-top: 20px;
   & .img {
     max-width: -webkit-fill-available;
+    max-height: -webkit-fill-available;
     border-radius: 3px;
   }
 `;

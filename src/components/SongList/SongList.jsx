@@ -78,7 +78,7 @@ export const SongList = () => {
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  margin: 5px 3px 25px 3px;
+  margin: 5px 5px 25px 5px;
   @media (max-width: 550px) {
     font-size: 0.55em;
   }
