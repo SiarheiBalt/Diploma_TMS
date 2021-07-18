@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Diploma_TMS/static/css/main.ad8075af.chunk.css",
-    "main.js": "/Diploma_TMS/static/js/main.c2751c38.chunk.js",
-    "main.js.map": "/Diploma_TMS/static/js/main.c2751c38.chunk.js.map",
+    "main.js": "/Diploma_TMS/static/js/main.fb641288.chunk.js",
+    "main.js.map": "/Diploma_TMS/static/js/main.fb641288.chunk.js.map",
     "runtime-main.js": "/Diploma_TMS/static/js/runtime-main.a307609b.js",
     "runtime-main.js.map": "/Diploma_TMS/static/js/runtime-main.a307609b.js.map",
     "static/css/2.4bd8e119.chunk.css": "/Diploma_TMS/static/css/2.4bd8e119.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.4bd8e119.chunk.css",
     "static/js/2.d1cdc539.chunk.js",
     "static/css/main.ad8075af.chunk.css",
-    "static/js/main.c2751c38.chunk.js"
+    "static/js/main.fb641288.chunk.js"
   ]
 }
